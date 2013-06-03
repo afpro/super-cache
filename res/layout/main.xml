@@ -4,10 +4,40 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, MyActivity"
-            />
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <EditText android:id="@+id/name_edit"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="0.8"
+                  android:hint="@string/name_edit_hint"
+                />
+        <EditText android:id="@+id/path_edit"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="0.2"
+                  android:text="@string/path_default"
+                  android:hint="@string/path_edit_hint"
+                />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center">
+        <Button android:id="@+id/bt_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/show_bt_text"/>
+        <Button android:id="@+id/bt_convert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/convert_bt_text"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/img"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:background="#336699"
+               android:contentDescription="@string/img_alt"/>
 </LinearLayout>
 

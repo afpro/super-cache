@@ -13,12 +13,18 @@ public class CustomDrawable extends Drawable {
     private final Paint paint = new Paint();
     private final Rect bound = new Rect();
 
+    private final RawImageCenter imgCenter;
+    private final String name;
+
+    public CustomDrawable(RawImageCenter imgCenter, String name) {
+        this.imgCenter = imgCenter;
+        this.name = name;
+    }
+
     @Override
     public void draw(Canvas canvas) {
         Log.d("fuck", "bound: " + bound);
-        paint.setColor(Color.BLUE);
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawRect(bound, paint);
+        imgCenter.draw(name, null, bound, canvas, paint);
     }
 
     @Override
@@ -60,13 +66,11 @@ public class CustomDrawable extends Drawable {
 
     @Override
     public int getIntrinsicWidth() {
-        //TODO: fix this
-        return 0;
+        return imgCenter.getWidth(name);
     }
 
     @Override
     public int getIntrinsicHeight() {
-        //TODO: fix this
-        return 0;
+        return imgCenter.getHeight(name);
     }
 }
